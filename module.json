@@ -1,0 +1,12 @@
+{
+    "id": "finance",
+    "name": "Finance",
+    "description": "Finance module for Space & Users.",
+    "keywords": [
+    ],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "1.2"
+    },
+    "screenshots": ["assets/module_image.png"]
+}
