@@ -5,6 +5,6 @@ This app provides a comprehensive finance solution to your Humhub service. It in
 
 [__Akaunting Website__](https://akaunting.com/)
 
-__Module website:__ Olan/Finance
+[__Module website__](https://github.com/olantrust/humhub-finance)
 
 __Developer:__ Vijay Padhariya
