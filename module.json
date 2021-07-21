@@ -11,5 +11,8 @@
     "humhub": {
         "minVersion": "1.6"
     },
-    "screenshots": ["assets/module_image.png"]
+    "screenshots": [
+        "resources/screenshot-1.png",
+        "resources/screenshot-2.png"
+    ]
 }
