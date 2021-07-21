@@ -11,6 +11,15 @@
     "humhub": {
         "minVersion": "1.6"
     },
+    "homepage": "https://github.com/olantrust/humhub-finance",
+    "authors": [
+        {
+            "name": "Storm Poorun"
+        },
+        {
+            "name": "Vijay Padhariya"
+        }
+    ],
     "screenshots": [
         "resources/screenshot-1.png",
         "resources/screenshot-2.png"
