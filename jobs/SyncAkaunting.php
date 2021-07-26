@@ -1,13 +1,13 @@
 <?php
 
-namespace olan\finance\jobs;
+namespace olan\akauntingfinance\jobs;
 
 use Yii;
 use humhub\modules\queue\ActiveJob;
 use humhub\modules\space\models\Space;
-use olan\finance\models\akaunting\Companies;
-use olan\finance\models\AkauntingCompany;
-use olan\finance\models\AkauntingCompanyUser;
+use olan\akauntingfinance\models\akaunting\Companies;
+use olan\akauntingfinance\models\AkauntingCompany;
+use olan\akauntingfinance\models\AkauntingCompanyUser;
 
 /**
  * Job Class for Syncing with Akaunting setup

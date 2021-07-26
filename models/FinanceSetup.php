@@ -1,6 +1,6 @@
 <?php
 
-namespace olan\finance\models;
+namespace olan\akauntingfinance\models;
 
 use Yii;
 
@@ -50,7 +50,7 @@ class FinanceSetup extends \humhub\models\Setting
      */
     public function save($runValidation = true, $attributeNames = NULL)
     {
-        $module = Yii::$app->getModule('finance');
+        $module = Yii::$app->getModule('akaunting-finance');
 
         $module->settings->set('API_url', $this->API_url);
         $module->settings->set('API_user', $this->API_user);
@@ -66,7 +66,7 @@ class FinanceSetup extends \humhub\models\Setting
      */
     public static function getValue($key)
     {
-        return Yii::$app->getModule('finance')->settings->get($key);
+        return Yii::$app->getModule('akaunting-finance')->settings->get($key);
     }
 
 }

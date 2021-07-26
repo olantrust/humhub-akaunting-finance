@@ -1,19 +1,11 @@
 <?php
 
-namespace  olan\finance;
+namespace  olan\akauntingfinance;
 
-use humhub\modules\space\helpers\MembershipHelper;
-use humhub\modules\space\models\Space;
 use humhub\modules\ui\menu\MenuLink;
-use humhub\modules\user\models\User;
-use olan\finance\jobs\SyncAkaunting;
-use olan\finance\models\akaunting\Companies;
-use olan\finance\models\akaunting\Users;
-use olan\finance\models\AkauntingCompany;
-use olan\finance\models\AkauntingCompanyUser;
-use olan\finance\models\AkauntingUser;
+use olan\akauntingfinance\jobs\SyncAkaunting;
+use olan\akauntingfinance\models\AkauntingCompany;
 use Yii;
-use yii\helpers\Json;
 use yii\helpers\Url;
 
 class Events
@@ -26,11 +18,11 @@ class Events
     // public static function onTopMenuInit($event)
     // {
     //     $event->sender->addItem([
-    //         'label' => 'Finance',
+    //         'label' => 'Akaunting Finance',
     //         'icon' => '<i class="fa fa-eur"></i>',
-    //         'url' => Url::to(['/finance/index']),
+    //         'url' => Url::to(['/akaunting-finance/index']),
     //         'sortOrder' => 99999,
-    //         'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'finance' && Yii::$app->controller->id == 'index'),
+    //         'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'akaunting-finance' && Yii::$app->controller->id == 'index'),
     //     ]);
     // }
 
@@ -42,22 +34,22 @@ class Events
     public static function onAdminMenuInit($event)
     {
         $event->sender->addItem([
-            'label'     => Yii::t('FinanceModule.base', 'Akaunting Configuration'),
-            'url'       => Url::to(['/finance/admin']),
+            'label'     => Yii::t('AkauntingFinanceModule.base', 'Akaunting Configuration'),
+            'url'       => Url::to(['/akaunting-finance/admin']),
             'group'     => 'manage',
             'icon'      => '<i class="fa fa-money"></i>',
-            'isActive'  => MenuLink::isActiveState('finance', 'admin'),
+            'isActive'  => MenuLink::isActiveState('akaunting-finance', 'admin'),
             'sortOrder' => 400,
         ]);
     }
 
     public static function onSpaceHeaderControlsMenu($event)
     {
-        if($event->sender->space->isModuleEnabled('finance') && $event->sender->space->isAdmin())
+        if($event->sender->space->isModuleEnabled('akaunting-finance') && $event->sender->space->isAdmin())
         {
             $event->sender->addEntry(new MenuLink([
-                'label'     => Yii::t('FinanceModule.base', 'Finance'),
-                'url'       => $event->sender->space->createUrl('/finance/finance-settings-space'),
+                'label'     => Yii::t('AkauntingFinanceModule.base', 'Akaunting Finance'),
+                'url'       => $event->sender->space->createUrl('/akaunting-finance/finance-settings-space'),
                 'icon'      => 'money',
                 'sortOrder' => 200,
             ]));
@@ -66,13 +58,13 @@ class Events
 
     public static function onSpaceDefaultMenu($event)
     {
-        if($event->sender->space->isModuleEnabled('finance') && $event->sender->space->isAdmin())
+        if($event->sender->space->isModuleEnabled('akaunting-finance') && $event->sender->space->isAdmin())
         {
             $event->sender->addEntry(new MenuLink([
-                'label'     => Yii::t('FinanceModule.base', 'Finance'),
-                'url'       => $event->sender->space->createUrl('/finance/finance-settings-space'),
+                'label'     => Yii::t('AkauntingFinanceModule.base', 'Akaunting Finance'),
+                'url'       => $event->sender->space->createUrl('/akaunting-finance/finance-settings-space'),
                 // 'icon'      => 'money',
-                'isActive'  => MenuLink::isActiveState('finance', 'finance-settings-space'),
+                'isActive'  => MenuLink::isActiveState('akaunting-finance', 'finance-settings-space'),
                 'sortOrder' => 400
             ]));
         }
@@ -129,8 +121,8 @@ class Events
         if($is_linked)
         {
             $event->sender->addItem([ // Menu entry for Desktop
-                'label'    => 'Finance',
-                'url'      => $space->createUrl('/finance/akaunting', ['fullscreen' => 'on']),
+                'label'    => 'Akaunting Finance',
+                'url'      => $space->createUrl('/akaunting-finance/akaunting', ['fullscreen' => 'on']),
                 // 'group'    => 'manage',
                 'icon'      => '<i class="fa fa-money"></i>',
                 'isActive'  => MenuLink::isActiveState('finance', 'akaunting'),
@@ -139,8 +131,8 @@ class Events
             ]);
 
             $event->sender->addItem([ // Menu entry for Mobile
-                'label'    => 'Finance',
-                'url'      => $space->createUrl('/finance/akaunting'),
+                'label'    => 'Akaunting Finance',
+                'url'      => $space->createUrl('/akaunting-finance/akaunting'),
                 // 'group'    => 'manage',
                 'icon'      => '<i class="fa fa-money"></i>',
                 'isActive'  => MenuLink::isActiveState('finance', 'akaunting'),

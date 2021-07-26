@@ -1,14 +1,12 @@
 <?php
 
-namespace olan\finance\controllers;
+namespace olan\akauntingfinance\controllers;
 
 use Yii;
 use humhub\modules\admin\components\Controller;
-use humhub\modules\user\models\User;
-use olan\finance\components\Akaunting;
-use olan\finance\jobs\SyncAkaunting;
-use olan\finance\models\FinanceSetup;
-use yii\helpers\ArrayHelper;
+use olan\akauntingfinance\components\Akaunting;
+use olan\akauntingfinance\jobs\SyncAkaunting;
+use olan\akauntingfinance\models\FinanceSetup;
 use yii\helpers\Json;
 
 class AdminController extends Controller
@@ -21,7 +19,7 @@ class AdminController extends Controller
      */
     public function actionIndex()
     {
-        $module = Yii::$app->getModule('finance');
+        $module = Yii::$app->getModule('akaunting-finance');
 
         $model = new FinanceSetup();
 
@@ -74,7 +72,7 @@ class AdminController extends Controller
             // If ping status received, we will initiate syncing.
             Yii::$app->queue->push(new SyncAkaunting(['new_space' => true]));
 
-            $ping_status['response'] = Yii::t('FinanceModule.base', 'Api works successfully, your data will be sync sith akaunting.');
+            $ping_status['response'] = Yii::t('AkauntingFinanceModule.base', 'Api works successfully, your data will be sync sith akaunting.');
             return Json::encode($ping_status);
         }
     }

@@ -1,12 +1,12 @@
 <?php
 
-namespace olan\finance\models;
+namespace olan\akauntingfinance\models;
 
 use humhub\modules\space\models\Space;
 use Yii;
 use yii\helpers\Json;
 use yii\behaviors\TimestampBehavior;
-use olan\finance\models\akaunting\Companies;
+use olan\akauntingfinance\models\akaunting\Companies;
 
 /**
  * This is the model class for table "{{%akaunting_company}}".
@@ -52,12 +52,12 @@ class AkauntingCompany extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('FinanceModule.base', 'ID'),
-            'space_id' => Yii::t('FinanceModule.base', 'Space ID'),
-            'akc_id' => Yii::t('FinanceModule.base', 'Akc ID'),
-            'akc_name' => Yii::t('FinanceModule.base', 'Akc Name'),
-            'created_at' => Yii::t('FinanceModule.base', 'Created At'),
-            'updated_at' => Yii::t('FinanceModule.base', 'Updated At'),
+            'id' => Yii::t('AkauntingFinanceModule.base', 'ID'),
+            'space_id' => Yii::t('AkauntingFinanceModule.base', 'Space ID'),
+            'akc_id' => Yii::t('AkauntingFinanceModule.base', 'Akc ID'),
+            'akc_name' => Yii::t('AkauntingFinanceModule.base', 'Akc Name'),
+            'created_at' => Yii::t('AkauntingFinanceModule.base', 'Created At'),
+            'updated_at' => Yii::t('AkauntingFinanceModule.base', 'Updated At'),
         ];
     }
 

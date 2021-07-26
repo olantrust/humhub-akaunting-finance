@@ -7,13 +7,13 @@ use yii\widgets\ActiveForm;
 use humhub\modules\space\modules\manage\widgets\DefaultMenu;
 use humhub\widgets\Button;
 
-\olan\finance\assets\Assets::register($this);
+\olan\akauntingfinance\assets\Assets::register($this);
 
 ?>
 <div class="panel panel-default">
     <div>
         <div class="panel-heading">
-            <?= Yii::t('FinanceModule.manage', '<strong>Akaunting</strong> link settings'); ?>
+            <?= Yii::t('AkauntingFinanceModule.manage', '<strong>Akaunting</strong> link settings'); ?>
         </div>
     </div>
 
@@ -27,7 +27,7 @@ use humhub\widgets\Button;
             <!-- <h1>//TODO : link space</h1> -->
             <center>
                 <?= Button::asLink('Link Space')->icon('fa-link')
-                    ->action('finance.linkSpace', $space->createUrl('/finance/finance-settings-space/link-space'))
+                    ->action('akaunting-finance.linkSpace', $space->createUrl('/akaunting-finance/finance-settings-space/link-space'))
                     ->loader(true)
                     ->cssClass('btn btn-primary')->options(['data-ui-loader'])->visible(true) ?>
             </center>

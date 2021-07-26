@@ -1,6 +1,6 @@
 <?php
 
-namespace  olan\finance\assets;
+namespace  olan\akauntingfinance\assets;
 
 use yii\web\AssetBundle;
 
@@ -12,7 +12,7 @@ class Assets extends AssetBundle
     /**
      * @var string defines the path of your module assets
      */
-    public $sourcePath = '@finance/resources';
+    public $sourcePath = '@akaunting-finance/resources';
 
     /**
      * @var array defines where the js files are included into the page, note your custom js files should be included after the core files (which are included in head)
@@ -23,11 +23,11 @@ class Assets extends AssetBundle
     * @var array change forceCopy to true when testing your js in order to rebuild this assets on every request (otherwise they will be cached)
     */
     public $publishOptions = [
-        'forceCopy' => YII_DEBUG ? true : false
+        'forceCopy' => false
     ];
 
     public $js = [
-        'js/humhub.finance.js'
+        'js/humhub.akaunting-finance.js'
     ];
 
 }

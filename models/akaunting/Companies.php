@@ -1,8 +1,8 @@
 <?php
 
-namespace olan\finance\models\akaunting;
+namespace olan\akauntingfinance\models\akaunting;
 
-use olan\finance\components\Akaunting;
+use olan\akauntingfinance\components\Akaunting;
 use yii\helpers\Json;
 
 class Companies extends Akaunting
@@ -23,7 +23,7 @@ class Companies extends Akaunting
             $request_uri .= '?' . $query_string;
         }
 
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
         $payload = Json::encode($payload);
         $this->http->setRawBody($payload);
 
@@ -42,7 +42,7 @@ class Companies extends Akaunting
     public function search($search)
     {
         $this->http->setUri($this->API_url . 'companies');
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         $payload = Json::encode(['search' => $search]);
 
@@ -61,7 +61,7 @@ class Companies extends Akaunting
     public function view($id)
     {
         $this->http->setUri($this->API_url . 'companies/' . $id);
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         $this->log('warning', Json::encode(['Calling from' =>  __CLASS__ . '.' . __FUNCTION__]));
 
@@ -76,7 +76,7 @@ class Companies extends Akaunting
     public function save($data = [])
     {
         $this->http->setUri($this->API_url . 'companies');
-        $this->http->setMethod(\Zend\Http\Request::METHOD_POST);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_POST);
 
         $payload = Json::encode($data);
         $this->http->setRawBody($payload);

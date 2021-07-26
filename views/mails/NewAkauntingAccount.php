@@ -29,7 +29,7 @@ use yii\helpers\Html;
                                                     <td width="auto"  align="center" valign="middle" height="28" style="background-color:<?= Yii::$app->view->theme->variable('background-color-main', '#fff') ?>;background-clip: padding-box; font-size:26px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; text-align:center;  color:#a3a2a2; font-weight: 300; padding-left:18px; padding-right:18px; ">
 
                                                         <span style="color:<?= Yii::$app->view->theme->variable('text-color-highlight', '#555') ?>; font-weight: 300;">
-                                                            <?= Yii::t('FinanceModule.base', '<strong>Akaunting</strong></strong> your credentials'); ?>
+                                                            <?= Yii::t('AkauntingFinanceModule.base', '<strong>Akaunting</strong></strong> your credentials'); ?>
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -95,13 +95,13 @@ use yii\helpers\Html;
                                                 <tr>
                                                     <td  style="font-size: 14px; line-height: 22px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; color:<?= Yii::$app->view->theme->variable('text-color-main', '#777') ?>; font-weight:300; text-align:left; ">
 
-                                                        <?php echo Yii::t('FinanceModule.base', 'Hello'); ?> <?php echo Html::encode($user->displayName); ?>,<br><br>
+                                                        <?php echo Yii::t('AkauntingFinanceModule.base', 'Hello'); ?> <?php echo Html::encode($user->displayName); ?>,<br><br>
 
-                                                        <?php echo Yii::t('FinanceModule.base', 'Below is your Akaunting Credentials.'); ?><br><br>
+                                                        <?php echo Yii::t('AkauntingFinanceModule.base', 'Below is your Akaunting Credentials.'); ?><br><br>
 
-                                                        <?php echo Yii::t('FinanceModule.base', 'Username'); ?>: <?php echo $user->email; ?><br>
+                                                        <?php echo Yii::t('AkauntingFinanceModule.base', 'Username'); ?>: <?php echo $user->email; ?><br>
 
-                                                        <?php echo Yii::t('FinanceModule.base', 'Password'); ?>: <?php echo $password; ?>
+                                                        <?php echo Yii::t('AkauntingFinanceModule.base', 'Password'); ?>: <?php echo $password; ?>
 
                                                     </td>
                                                 </tr>
@@ -128,7 +128,7 @@ use yii\helpers\Html;
 
                                                         <span style="color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
                                                             <a href="<?php echo $login_url; ?>" style="text-decoration: none; color: <?= Yii::$app->view->theme->variable('text-color-contrast', '#fff') ?>; font-weight: 300;">
-                                                                <strong><?= Yii::t('FinanceModule.base', 'Login Url'); ?></strong>
+                                                                <strong><?= Yii::t('AkauntingFinanceModule.base', 'Login Url'); ?></strong>
                                                             </a>
                                                         </span>
                                                     </td>

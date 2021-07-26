@@ -5,11 +5,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-\olan\finance\assets\Assets::register($this);
+\olan\akauntingfinance\assets\Assets::register($this);
 
 ?>
 <div class="panel panel-default">
-    <div class="panel-heading"><strong><?= Yii::t('FinanceModule.base', 'Akaunting') ?></strong> <?= Yii::t('FinanceModule.base', 'configuration') ?></div>
+    <div class="panel-heading"><strong><?= Yii::t('AkauntingFinanceModule.base', 'Akaunting') ?></strong> <?= Yii::t('AkauntingFinanceModule.base', 'configuration') ?></div>
 
     <div class="panel-body">
         <?php $form = ActiveForm::begin(); ?>
@@ -38,10 +38,10 @@ use yii\widgets\ActiveForm;
             </div>
 
             <div class="form-group">
-                <?= Html::submitButton(Yii::t('FinanceModule.base', 'Save'), ['class' => 'btn btn-success']) ?>
+                <?= Html::submitButton(Yii::t('AkauntingFinanceModule.base', 'Save'), ['class' => 'btn btn-success']) ?>
 
-                <?= Button::asLink(Yii::t('FinanceModule.base', 'Test & Sync'))->icon('fa-cog')
-                    ->action('finance.testApi', Url::to(['/finance/admin/test']))
+                <?= Button::asLink(Yii::t('AkauntingFinanceModule.base', 'Test & Sync'))->icon('fa-cog')
+                    ->action('akaunting-finance.testApi', Url::to(['/akaunting-finance/admin/test']))
                     ->loader(true)
                     ->cssClass('btn btn-primary pull-right')->options(['data-ui-loader'])->visible(true) ?>
             </div>

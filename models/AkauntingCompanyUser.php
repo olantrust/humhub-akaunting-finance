@@ -1,12 +1,12 @@
 <?php
 
-namespace olan\finance\models;
+namespace olan\akauntingfinance\models;
 
 use humhub\modules\space\models\Space;
 use humhub\modules\user\models\User;
-use olan\finance\components\Akaunting;
-use olan\finance\models\akaunting\Companies;
-use olan\finance\models\akaunting\Users;
+use olan\akauntingfinance\components\Akaunting;
+use olan\akauntingfinance\models\akaunting\Companies;
+use olan\akauntingfinance\models\akaunting\Users;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
@@ -58,14 +58,14 @@ class AkauntingCompanyUser extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('FinanceModule.base', 'ID'),
-            'space_id' => Yii::t('FinanceModule.base', 'Space ID'),
-            'akc_id' => Yii::t('FinanceModule.base', 'Akc ID'),
-            'user_id' => Yii::t('FinanceModule.base', 'User ID'),
-            'aku_id' => Yii::t('FinanceModule.base', 'Aku ID'),
-            'aku_password' => Yii::t('FinanceModule.base', 'Aku Password'),
-            'created_at' => Yii::t('FinanceModule.base', 'Created At'),
-            'updated_at' => Yii::t('FinanceModule.base', 'Updated At'),
+            'id' => Yii::t('AkauntingFinanceModule.base', 'ID'),
+            'space_id' => Yii::t('AkauntingFinanceModule.base', 'Space ID'),
+            'akc_id' => Yii::t('AkauntingFinanceModule.base', 'Akc ID'),
+            'user_id' => Yii::t('AkauntingFinanceModule.base', 'User ID'),
+            'aku_id' => Yii::t('AkauntingFinanceModule.base', 'Aku ID'),
+            'aku_password' => Yii::t('AkauntingFinanceModule.base', 'Aku Password'),
+            'created_at' => Yii::t('AkauntingFinanceModule.base', 'Created At'),
+            'updated_at' => Yii::t('AkauntingFinanceModule.base', 'Updated At'),
         ];
     }
 

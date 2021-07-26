@@ -1,10 +1,10 @@
 <?php
 
-namespace olan\finance\components;
+namespace olan\akauntingfinance\components;
 
 use Yii;
 use yii\helpers\Json;
-use olan\finance\models\FinanceSetup;
+use olan\akauntingfinance\models\FinanceSetup;
 use yii\base\InvalidConfigException;
 
 class Akaunting
@@ -35,14 +35,14 @@ class Akaunting
             return false;
         }
 
-        $http = new \Zend\Http\Client(null, [
-            // 'adapter' => '\Zend\Http\Client\Adapter\Curl',
+        $http = new \Laminas\Http\Client(null, [
+            // 'adapter' => '\Laminas\Http\Client\Adapter\Curl',
             'curloptions' => \humhub\libs\CURLHelper::getOptions(),
             'timeout'    => $timeout
         ]);
 
         // Set basic Authentication
-        $http->setAuth($this->API_user, $this->API_pass, \Zend\Http\Client::AUTH_BASIC);
+        $http->setAuth($this->API_user, $this->API_pass, \Laminas\Http\Client::AUTH_BASIC);
 
         // Set content type header to application/json
         $http->setHeaders(['Content-type' => 'application/json']);
@@ -58,7 +58,7 @@ class Akaunting
     public function getPing()
     {
         $this->http->setUri($this->API_url . 'ping');
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         return $this->getResponse();
     }
@@ -70,7 +70,7 @@ class Akaunting
     public function getCompanies()
     {
         $this->http->setUri($this->API_url . 'companies');
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         return $this->getResponse();
     }
@@ -84,7 +84,7 @@ class Akaunting
     public function getCompany($company_ID = 0)
     {
         $this->http->setUri($this->API_url . 'companies/' . $company_ID);
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         return $this->getResponse();
     }
@@ -96,7 +96,7 @@ class Akaunting
     public function getUsers()
     {
         $this->http->setUri($this->API_url . 'users');
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         return $this->getResponse();
     }
@@ -110,7 +110,7 @@ class Akaunting
     public function getUser($user_ID)
     {
         $this->http->setUri($this->API_url . 'users/' . $user_ID);
-        $this->http->setMethod(\Zend\Http\Request::METHOD_GET);
+        $this->http->setMethod(\Laminas\Http\Request::METHOD_GET);
 
         return $this->getResponse();
     }
@@ -129,7 +129,7 @@ class Akaunting
 
             $send = $this->http->send();
 
-            if($send->getStatusCode() == \Zend\Http\Response::STATUS_CODE_200)
+            if($send->getStatusCode() == \Laminas\Http\Response::STATUS_CODE_200)
             {
                 $response = $send->getBody();
                 // $response = Json::decode($response);

@@ -1,13 +1,13 @@
 <?php
 
-namespace olan\finance\controllers;
+namespace olan\akauntingfinance\controllers;
 
 use humhub\components\Controller;
 
 class IndexController extends Controller
 {
 
-    public $subLayout = "@finance/views/layouts/default";
+    public $subLayout = "@akaunting-finance/views/layouts/default";
 
     /**
      * Renders the index view for the module

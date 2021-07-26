@@ -1,6 +1,6 @@
 <?php
 
-namespace olan\finance;
+namespace olan\akauntingfinance;
 
 use Yii;
 use yii\helpers\Url;
@@ -26,7 +26,7 @@ class Module extends \humhub\modules\content\components\ContentContainerModule
     */
     public function getConfigUrl()
     {
-        return Url::to(['/finance/admin']);
+        return Url::to(['/akaunting-finance/admin']);
     }
 
     /**
@@ -52,7 +52,7 @@ class Module extends \humhub\modules\content\components\ContentContainerModule
     */
     public function getContentContainerName(ContentContainerActiveRecord $container)
     {
-        return Yii::t('FinanceModule.base', 'Finance');
+        return Yii::t('AkauntingFinanceModule.base', 'Akaunting Finance');
     }
 
     /**
@@ -60,6 +60,6 @@ class Module extends \humhub\modules\content\components\ContentContainerModule
     */
     public function getContentContainerDescription(ContentContainerActiveRecord $container)
     {
-        return Yii::t('FinanceModule.base', 'Finance module, using Akaunting app');
+        return Yii::t('AkauntingFinanceModule.base', 'Short description of the modules purpose.');
     }
 }
