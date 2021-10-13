@@ -112,8 +112,8 @@ class AkauntingCompanyUser extends \yii\db\ActiveRecord
                 $AK_user->save($save_user);
 
                 $mail = Yii::$app->getMailer()->compose([
-                    'html' => '@finance/views/mails/NewAkauntingAccount',
-                    'text' => '@finance/views/mails/plaintext/NewAkauntingAccount'
+                    'html' => '@akaunting-finance/views/mails/NewAkauntingAccount',
+                    'text' => '@akaunting-finance/views/mails/plaintext/NewAkauntingAccount'
                 ], [
                     'login_url'       => FinanceSetup::getValue('API_url'),
                     'user'            => $user,
